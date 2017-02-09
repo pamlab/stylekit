@@ -1,0 +1,13 @@
+{
+  "name": "postcss-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "postcss -c postcss.json",
+    "watch": "postcss -c postcss.json -w"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
