@@ -37,7 +37,7 @@ src/cssの中の.pcssを色々やってcssフォルダへコンパイルし排�
 
 ### SetUp
 
-1. [ダウンロード](https://github.com/pamlab/fe-skeleton/releases)したファイルをプロジェクトルートへ配置
+1. [ダウンロード](https://github.com/pamlab/fe-stylekit/releases)したファイルをプロジェクトルートへ配置
 2. install.bat を実行。モジュールのインストールが完了するのを待つ
 
 > install.bat の実行は初回のみでOKです。
