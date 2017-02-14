@@ -3,6 +3,8 @@ fe-stylekit
 
 Frontend Stylekit base on PostCSS.
 
+![image](https://raw.githubusercontent.com/pamlab/fe-stylekit/images/img_01.png)
+
 ## Fearute
 
 src/cssの中の.pcssを色々やってcssフォルダへコンパイルし排出します。
