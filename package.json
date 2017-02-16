@@ -1,11 +1,12 @@
 {
   "name": "fe-stylekit",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "postcss -c postcss.json",
-    "watch": "postcss -c postcss.json -w"
+    "start": "postcss -c postcss.json -w",
+    "watch": "postcss -c postcss.json -w",
+    "build": "postcss -c postcss.json"
   },
   "keywords": [],
   "author": "",
