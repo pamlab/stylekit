@@ -17,6 +17,7 @@ src/cssの中の.cssを色々やってcssフォルダへコンパイルし排出
 | [CSS Nesting](http://tabatkins.github.io/specs/css-nesting/) | [postcss-nesting](https://github.com/jonathantneal/postcss-nesting) |
 | [Custom Media Queries](https://www.w3.org/TR/2016/WD-mediaqueries-4-20160126/#custom-mq) | [postcss-custom-media](https://github.com/postcss/postcss-custom-media) |
 | [Pseudo-class :any-link](https://drafts.csswg.org/selectors/#any-link-pseudo) | [postcss-pseudo-class-any-link](https://github.com/jonathantneal/postcss-pseudo-class-any-link) |
+| [color() function](https://drafts.csswg.org/css-color/#modifying-colors) | [postcss-color-function](https://github.com/postcss/postcss-color-function) |
 
 
 ## Structure

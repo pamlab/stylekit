@@ -6,6 +6,7 @@
     "postcss-custom-media",
     "postcss-pseudo-class-any-link",
     "postcss-apply",
+    "postcss-color-function",
     "autoprefixer",
     "postcss-reporter"
   ],
