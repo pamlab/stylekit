@@ -24,8 +24,7 @@ src/cssの中の.cssを色々やってcssフォルダへコンパイルし排出
 
 ```bash
 .
-├── postcss.json      # PostCSS tasks
-├── package.json      # Set npm script
+├── package.json      # Set npm script and PostCSS tasks
 ├── src
 │   └── css
 │       └── xxx.css  # Input styles
@@ -39,9 +38,9 @@ src/cssの中の.cssを色々やってcssフォルダへコンパイルし排出
 ### SetUp
 
 1. [ダウンロード](https://github.com/pamlab/fe-stylekit/releases)したファイルをプロジェクトルートへ配置
-2. install.bat を実行。モジュールのインストールが完了するのを待つ
+2. `npm install` を実行。モジュールのインストールが完了するのを待つ
 
-> install.bat の実行は初回のみでOKです。
+> `npm install` の実行は初回のみでOKです。
 
 ### Start
 
