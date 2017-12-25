@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "preinstall": "npm i -g postcss-cli@3 autoprefixer@7 postcss-flexbugs-fixes@3 postcss-custom-properties@6 postcss-nesting@3 postcss-custom-media@6 postcss-pseudo-class-any-link@4 postcss-apply@0.8 postcss-reporter@4 postcss-color-function@3",
+    "preinstall": "npm i -g postcss-cli@3 autoprefixer@7 postcss-flexbugs-fixes@3 postcss-custom-properties@6 postcss-nesting@2 postcss-custom-media@6 postcss-pseudo-class-any-link@4 postcss-apply@0.8 postcss-reporter@4 postcss-color-function@3",
     "start": "postcss src/css/*.css -d css -w",
     "watch": "postcss src/css/*.css -d css -w",
     "build": "postcss src/css/*.css -d css "
