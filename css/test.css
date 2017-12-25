@@ -1,0 +1,26 @@
+body {
+    color: #f00;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#eee));
+    background-image: -webkit-linear-gradient(top, #fff, #eee);
+    background-image: linear-gradient(to bottom, #fff, #eee)
+}
+
+body a {
+  font-size: 16px;
+  text-decoration: underline
+}
+
+body a:link,body a:visited {
+    color: #00f;
+}
+
+body a:hover {
+    color: rgb(26, 26, 255);
+}
+
+@media (max-width: 30em) {
+
+    body {
+        color: #0f0
+    }
+}

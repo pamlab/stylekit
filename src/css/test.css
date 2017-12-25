@@ -1,0 +1,30 @@
+@custom-media --small (max-width: 30em);
+
+:root {
+    --main-color: #f00;
+    --text-style: {
+        font-size: 16px;
+        text-decoration: underline;
+    }
+}
+
+body {
+    color: var(--main-color);
+    background-image: linear-gradient(to bottom, #fff, #eee);
+
+    & a {
+        @apply --text-style;
+
+        &:any-link {
+            color: #00f;
+        }
+
+        &:hover {
+            color: color(#00f l(+5%));
+        }
+    }
+
+    @media (--small) {
+        color: #0f0;
+    }
+}
