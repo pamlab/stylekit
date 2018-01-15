@@ -5,6 +5,17 @@ Frontend Stylekit base on PostCSS.
 
 ![image](https://raw.githubusercontent.com/pamlab/fe-stylekit/images/img_01.png)
 
+
+## Install
+
+`$ npm install -g @pamlab/stylekit`
+
+
+## Usage
+
+`$ stylekit -i xxx.css`
+
+
 ## Fearute
 
 src/cssの中の.cssを色々やってcssフォルダへコンパイルし排出します。
@@ -33,20 +44,7 @@ src/cssの中の.cssを色々やってcssフォルダへコンパイルし排出
 ```
 
 
-## Usage
 
-### SetUp
-
-1. [ダウンロード](https://github.com/pamlab/fe-stylekit/releases)したファイルをプロジェクトルートへ配置
-2. `npm install` を実行。モジュールのインストールが完了するのを待つ
-
-> `npm install` の実行は初回のみでOKです。
-
-### Start
-
-1. `Shift + 右クリック` でコンテキストメニューを開き、「コマンドプロンプトをここで開く」を選択
-2. `npm start` を入力し、src/cssフォルダ内のcssファイルの監視を開始
-3. src/cssフォルダ内のcssファイルを編集し、保存後正しくcssフォルダへコンパイルされていることを確認
 
 
 Enjoy Coding!!
