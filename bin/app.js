@@ -3,6 +3,7 @@
 
 const fs = require('fs');
 const postcss = require('postcss');
+const reporter = require('postcss-reporter/lib/formatter')()
 const chokidar = require('chokidar');
 const argv = require('argv');
 
@@ -23,13 +24,13 @@ const inputFilename = argv.option.input ? `src/css/${argv.option.input}` : 'src/
 const watcher = chokidar.watch('./src/css/**.css');
 
 watcher.on('ready', () => {
-    console.log('監視開始');
     build();
+    console.warn('Waiting for file changes...');
 });
 
 watcher.on('change', path => {
-    console.log('変更を感知');
     build();
+    console.warn('Waiting for file changes...');
 });
 
 function build() {
@@ -48,9 +49,6 @@ function build() {
                 "ios >= 6",
                 "android >= 4.0"
             ]
-        }),
-        require('postcss-reporter')({
-            "clearReportedMessages": true
         })
     ])
     .process(fs.readFileSync(inputFilename), {
@@ -61,6 +59,8 @@ function build() {
         if (result.warnings().length) {
             console.warn(reporter(result));
         }
-        fs.writeFile('css/test.css', result.css);
+        fs.writeFile('css/test.css', result.css, err => {
+            if (err) throw err;
+        });
     });
 }
