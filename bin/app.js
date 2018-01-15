@@ -59,6 +59,8 @@ function build() {
         if (result.warnings().length) {
             console.warn(reporter(result));
         }
-        fs.writeFile('css/test.css', result.css);
+        fs.writeFile('css/test.css', result.css, err => {
+            if (err) throw err;
+        });
     });
 }
