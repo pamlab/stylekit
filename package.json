@@ -1,6 +1,6 @@
 {
   "name": "@pamlab/stylekit",
-  "version": "5.0.1",
+  "version": "5.0.2",
   "description": "Frontend Stylekit base on PostCSS.",
   "bin": {
     "stylekit": "bin/app.js"
