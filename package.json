@@ -1,12 +1,13 @@
 {
   "name": "@pamlab/stylekit",
-  "version": "5.0.1",
+  "version": "5.0.2",
   "description": "Frontend Stylekit base on PostCSS.",
   "bin": {
     "stylekit": "bin/app.js"
   },
   "keywords": [],
   "author": "hirofumii",
+  "homepage": "https://github.com/pamlab/fe-stylekit",
   "license": "MIT",
   "dependencies": {
     "argv": "0.0.2",
