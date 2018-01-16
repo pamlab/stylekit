@@ -3,7 +3,7 @@
 
 const fs = require('fs');
 const postcss = require('postcss');
-const reporter = require('postcss-reporter/lib/formatter')()
+const reporter = require('postcss-reporter/lib/formatter')();
 const chokidar = require('chokidar');
 const argv = require('argv');
 
@@ -20,7 +20,9 @@ const args = argv.option([
     }
 ]).run();
 
-const inputFilename = argv.option.input ? `src/css/${argv.option.input}` : 'src/css/test.css';
+const filename = args.options.input ? args.options.input : 'test.css';
+const inputFile = 'src/css/' + filename;
+const outputFile = 'css/' + filename;
 const watcher = chokidar.watch('./src/css/**.css');
 
 watcher.on('ready', () => {
@@ -51,15 +53,15 @@ function build() {
             ]
         })
     ])
-    .process(fs.readFileSync(inputFilename), {
-        from: inputFilename,
-        to: 'css/test.css'
+    .process(fs.readFileSync(inputFile), {
+        from: inputFile,
+        to: outputFile
     })
     .then(result => {
         if (result.warnings().length) {
             console.warn(reporter(result));
         }
-        fs.writeFile('css/test.css', result.css, err => {
+        fs.writeFile(outputFile, result.css, err => {
             if (err) throw err;
         });
     });
