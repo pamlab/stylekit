@@ -4,6 +4,7 @@
 const fs = require('fs');
 const postcss = require('postcss');
 const reporter = require('postcss-reporter/lib/formatter')();
+const chalk = require('chalk');
 const chokidar = require('chokidar');
 const argv = require('argv');
 
@@ -27,12 +28,12 @@ const watcher = chokidar.watch('./src/css/**.css');
 
 watcher.on('ready', () => {
     build();
-    console.warn('Waiting for file changes...');
+    console.warn(chalk.bold.cyan('Waiting for file changes...'));
 });
 
 watcher.on('change', path => {
     build();
-    console.warn('Waiting for file changes...');
+    console.warn(chalk.bold.cyan('Waiting for file changes...'));
 });
 
 function build() {
