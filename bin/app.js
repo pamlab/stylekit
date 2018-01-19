@@ -65,5 +65,11 @@ function build() {
         fs.writeFile(outputFile, result.css, err => {
             if (err) throw err;
         });
+    })
+    .catch(err => {
+        err.message = err.message.substr(err.file.length + 1);
+        err.message = err.message.replace(/:\s/, '] ');
+        console.error('\n', chalk.bold.red(`[${err.message}`));
+        console.error('\n', err.showSourceCode(), '\n\n');
     });
 }
