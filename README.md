@@ -35,7 +35,6 @@ src/cssの中の.cssを色々やってcssフォルダへコンパイルし排出
 
 ```bash
 .
-├── package.json      # Set npm script and PostCSS tasks
 ├── src
 │   └── css
 │       └── xxx.css  # Input styles
