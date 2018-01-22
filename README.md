@@ -13,7 +13,12 @@ Frontend Stylekit base on PostCSS.
 
 ## Usage
 
-`$ stylekit -i xxx.css`
+`$ stylekit`
+
+|Name|Type|Default|Description|
+|:---|:--:|:-----:|:----------|
+|`-i, --input`|`{String}`|`src/css`|Input Directory|
+|`-o, --output`|`{String}`|`css`|Output Directory|
 
 
 ## Fearute
@@ -41,9 +46,5 @@ src/cssの中の.cssを色々やってcssフォルダへコンパイルし排出
 └── css
     └── xxx.css       # Output styles
 ```
-
-
-
-
 
 Enjoy Coding!!
