@@ -22,21 +22,22 @@ const args = argv.option([
 ]).run();
 
 const filename = args.options.input ? args.options.input : 'test.css';
-const inputFile = 'src/css/' + filename;
-const outputFile = 'css/' + filename;
 const watcher = chokidar.watch('./src/css/**.css');
 
 watcher.on('ready', () => {
-    build();
     console.warn(chalk.bold.cyan('Waiting for file changes...'));
 });
 
-watcher.on('change', path => {
-    build();
+watcher.on('change', (path, stats) => {
+    const file = path.split('\\');
+    build(file[file.length - 1]);
     console.warn(chalk.bold.cyan('Waiting for file changes...'));
 });
 
-function build() {
+function build(file) {
+    const input = 'src/css/' + file;
+    const output = 'css/' + file;
+
     postcss([
         require('postcss-flexbugs-fixes')(),
         require('postcss-custom-properties')(),
@@ -54,15 +55,15 @@ function build() {
             ]
         })
     ])
-    .process(fs.readFileSync(inputFile), {
-        from: inputFile,
-        to: outputFile
+    .process(fs.readFileSync(input), {
+        from: input,
+        to: output
     })
     .then(result => {
         if (result.warnings().length) {
             console.warn(reporter(result));
         }
-        fs.writeFile(outputFile, result.css, err => {
+        fs.writeFile(output, result.css, err => {
             if (err) throw err;
         });
     })
