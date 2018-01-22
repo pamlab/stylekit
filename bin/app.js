@@ -21,8 +21,10 @@ const args = argv.option([
     }
 ]).run();
 
-const filename = args.options.input ? args.options.input : 'test.css';
-const watcher = chokidar.watch('./src/css/**.css');
+const pathOptim = data => data.replace(/\/$/, '');
+const inputDir = args.options.input ? pathOptim(args.options.input) : 'src/css';
+const outputDir = args.options.output ? pathOptim(args.options.output) : 'css';
+const watcher = chokidar.watch(`${inputDir}/**.css`);
 
 watcher.on('ready', () => {
     console.warn(chalk.bold.cyan('Waiting for file changes...'));
@@ -35,8 +37,8 @@ watcher.on('change', (path, stats) => {
 });
 
 function build(file) {
-    const input = 'src/css/' + file;
-    const output = 'css/' + file;
+    const input = `${inputDir}/${file}`;
+    const output = `${outputDir}/${file}`;
 
     postcss([
         require('postcss-flexbugs-fixes')(),
