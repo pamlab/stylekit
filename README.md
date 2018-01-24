@@ -19,6 +19,7 @@ Frontend Stylekit base on PostCSS.
 |:---|:--:|:-----:|:----------|
 |`-i, --input`|`{String}`|`src/css`|Input Directory|
 |`-o, --output`|`{String}`|`css`|Output Directory|
+|`-t, --target`|`pc or sp`|`all`|Target Device|
 
 
 ## Fearute
