@@ -32,12 +32,15 @@ const outputDir = args.options.output ? pathOptim(args.options.output) : 'css';
 const watcher = chokidar.watch(`${inputDir}/**.css`);
 
 watcher.on('ready', () => {
+    const target = args.options.target ? args.options.target : 'default';
+
+    console.warn(chalk.bold.green(`Started in ${target} mode.`));
     console.warn(chalk.bold.cyan('Waiting for file changes...'));
 });
 
 watcher.on('change', (path, stats) => {
     const file = path.split('\\');
-    
+
     build(file[file.length - 1]);
     console.warn(chalk.bold.cyan('Waiting for file changes...'));
 });
