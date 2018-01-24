@@ -6,6 +6,7 @@ const reporter = require('postcss-reporter/lib/formatter')();
 const chalk = require('chalk');
 const chokidar = require('chokidar');
 const argv = require('argv');
+const config = require('./config.json');
 
 const args = argv.option([
     {
@@ -16,6 +17,11 @@ const args = argv.option([
     {
         name: 'output',
         short: 'o',
+        type: 'string'
+    },
+    {
+        name: 'target',
+        short: 't',
         type: 'string'
     }
 ]).run();
@@ -31,6 +37,7 @@ watcher.on('ready', () => {
 
 watcher.on('change', (path, stats) => {
     const file = path.split('\\');
+    
     build(file[file.length - 1]);
     console.warn(chalk.bold.cyan('Waiting for file changes...'));
 });
@@ -38,6 +45,22 @@ watcher.on('change', (path, stats) => {
 function build(file) {
     const input = `${inputDir}/${file}`;
     const output = `${outputDir}/${file}`;
+
+    let browsers;
+
+    switch (args.options.target) {
+        case "pc" :
+            browsers = config.autoprefixer.browsers.pc;
+            break;
+
+        case "sp" :
+            browsers = config.autoprefixer.browsers.sp;
+            break;
+
+        default :
+            browsers = config.autoprefixer.browsers.default;
+            break;
+    }
 
     postcss([
         require('postcss-flexbugs-fixes')(),
@@ -48,12 +71,7 @@ function build(file) {
         require('postcss-apply')(),
         require('postcss-color-function')(),
         require('autoprefixer')({
-            "browsers": [
-                "last 2 versions",
-                "ie >= 11",
-                "ios >= 6",
-                "android >= 4.0"
-            ]
+            "browsers": browsers
         })
     ])
     .process(fs.readFileSync(input), {
