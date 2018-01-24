@@ -12,6 +12,7 @@
   "dependencies": {
     "argv": "0.0.2",
     "autoprefixer": "^7.2.5",
+    "chalk": "^2.3.0",
     "chokidar": "^2.0.0",
     "postcss": "^6.0.16",
     "postcss-apply": "^0.8.0",
